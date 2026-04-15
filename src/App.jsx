@@ -1,9 +1,10 @@
 import React from 'react'
+import Header from './components/Header'
 
 const App = () => {
   return (
-    <div>
-      <p className='font-lato'>huiiiiii</p>
+    <div className='px-3 py-2 md:px-8'>
+      <Header />
     </div>
   )
 }

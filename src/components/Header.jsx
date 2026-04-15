@@ -11,6 +11,7 @@ const Header = () => {
 
 
     return (
+
         <header>
 
             <div className='flex justify-between items-center'>
@@ -18,35 +19,33 @@ const Header = () => {
 
                 {/* logo   */}
                 <div className='border w-fit rounded-lg'>
-
                     <Link>
                         <img
                             src={logo}
-                            alt=""
+                            alt="An logo of a company"
                             className='w-16 rounded-lg'
                         />
                     </Link>
-
                 </div>
+
 
                 {/* desktop menu  */}
                 {/* links  */}
                 <nav className='flex gap-4 hidden  md:flex'>
-                    <Link className='px-4 py-1 border border-gray-400 text-center my-1 rounded hover:bg-purple-500 hover:text-white'>Home</Link>
-                    <Link className='px-4 py-1 border border-gray-400 text-center my-1 rounded hover:bg-purple-500 hover:text-white'>Store</Link>
-                    <Link className='px-4 py-1 border border-gray-400 text-center my-1 rounded hover:bg-purple-500 hover:text-white'>Course</Link>
+                    <Link className='px-4 py-1 border border-gray-400 text-center my-1 rounded hover:bg-purple-500 hover:text-white transition-all duration-200 ease-in-out'>Home</Link>
+                    <Link className='px-4 py-1 border border-gray-400 text-center my-1 rounded hover:bg-purple-500 hover:text-white transition-all duration-200 ease-in-out'>Store</Link>
+                    <Link className='px-4 py-1 border border-gray-400 text-center my-1 rounded hover:bg-purple-500 hover:text-white transition-all duration-200 ease-in-out'>Course</Link>
                 </nav>
 
                 {/* buttons  */}
-
                 <div className='flex gap-4 hidden md:block'>
 
                     <Button
                         name={'Sign Up'}
-                        className='px-4 py-2 mx-2 border rounded-lg text-center text-white  bg-blue-600 cursor-pointer active:bg-blue-500 active:scale-95 hover:bg-blue-500'
+                        className='px-4 py-2 mx-2 border rounded-lg text-center text-white  bg-blue-600 cursor-pointer  active:scale-95 hover:bg-blue-950 transition-all duration-200 ease-in-out'
                     />
                     <Button name={'Login'}
-                        className='px-4 py-2 mx-2 border rounded-lg text-center text-white  bg-blue-600 cursor-pointer active:bg-blue-500 active:scale-95 hover:bg-blue-500'
+                        className='px-4 py-2 mx-2 border rounded-lg text-center text-white  bg-blue-600 cursor-pointer  active:scale-95 hover:bg-blue-950 transition-all duration-200 ease-in-out'
                     />
 
                 </div>
@@ -64,7 +63,6 @@ const Header = () => {
             {/* mobile menu  */}
             {/* links & buttons  */}
 
-
             {
                 open &&
                 <>
@@ -75,8 +73,8 @@ const Header = () => {
                     </nav>
 
                     <div className='md:hidden'>
-                        <Button name={'Sign Up'} className='w-full py-1 border text-center my-1 rounded bg-blue-600 text-white active:bg-blue-500' />
-                        <Button name={'Login'} className='w-full py-1 border text-center my-1 rounded bg-blue-600 text-white active:bg-blue-500' />
+                        <Button name={'Sign Up'} className='w-full py-1 border text-center my-1 rounded bg-blue-600 text-white active:bg-blue-950 transition-all duration-200 ease-in-out' />
+                        <Button name={'Login'} className='w-full py-1 border text-center my-1 rounded bg-blue-600 text-white active:bg-blue-950 transition-all duration-200 ease-in-out' />
                     </div>
                 </>
             }

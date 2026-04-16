@@ -49,7 +49,7 @@ const Home = () => {
                     </div>
 
                     {/* right hero section  */}
-                    <div id="right-hero-sec" className='flex-1 min-h-[400px] md:min-h-full flex items-center justify-center'>
+                    <div id="right-hero-sec" className='flex-1 min-h-100 md:min-h-full flex items-center justify-center'>
 
                         <img
                             src={heroImg}

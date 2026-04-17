@@ -6,15 +6,24 @@ import CountUp from 'react-countup'
 import { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-
-
 // import required modules
 import { Pagination } from 'swiper/modules';
 import CarousalCard from '../components/CarousalCard'
+import CourseCard from '../components/CourseCard'
+import { Plyr } from "plyr-react";
+import "plyr-react/plyr.css";
+
+import video1 from '../assets/videos/reel-1.mp4'
+import video2 from '../assets/videos/reel-2.mp4'
+import video3 from '../assets/videos/reel-3.mp4'
+import video4 from '../assets/videos/reel-4.mp4'
+import video5 from '../assets/videos/reel-5.mp4'
+import video6 from '../assets/videos/reel-6.mp4'
+import video7 from '../assets/videos/reel-7.mp4'
+import video8 from '../assets/videos/reel-8.mp4'
 
 const Home = () => {
     return (
@@ -64,7 +73,6 @@ const Home = () => {
             </section>
 
             {/* // count section */}
-
             <section
                 className=''
             >
@@ -112,6 +120,7 @@ const Home = () => {
 
             </section>
 
+            {/* swiper slider  */}
             <section className='border my-4 py-4 rounded-xl'>
                 <h2 className=' capitalize my-4 text-4xl text-[#6C1BD9] font-semibold text-center mb-6 md:text-5xl'>why luna coding institute ? </h2>
 
@@ -167,6 +176,281 @@ const Home = () => {
 
                     </SwiperSlide>
                 </Swiper >
+            </section>
+
+            {/* courses section  */}
+            <section className='border border-b-gray-500 p-4 md:p-6 rounded-xl bg-[#4F39F6]'>
+
+
+                <h2
+                    className='capitalize my-4 text-4xl text-white font-semibold text-center mb-6 md:text-5xl'
+                >
+                    Our Courses
+                </h2>
+
+                <div className='grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 '>
+
+                    <CourseCard
+                        img={'https://ik.imagekit.io/sheryians/courses/cohort3thumbnai_E9AGbX-rJ.webp'}
+                        heading='Cohort 3.0'
+                        dets='Build real scalable products used by thousands of users, learn AI engineering, full stack development, DevOps, system design, and startup building all inside one live Hindi cohort.'
+                        price='8,999'
+                        discount='20% off'
+                    />
+
+                    <CourseCard
+                        img={'https://ik.imagekit.io/sheryians/Cohort%202.0/cohort-3_ekZjBiRzc-2_76HU4-Mz5z.jpeg?updatedAt=1757741949621'}
+                        heading='Cohort 2.0'
+                        dets='Build real scalable products used by thousands of users, learn AI engineering, full stack development, DevOps, system design, and startup building all inside one live Hindi cohort.'
+                        price='7,999'
+                        discount='43% off'
+                    />
+
+                    <CourseCard
+                        img={'https://ik.imagekit.io/sheryians/courses_gif/undefined-Image_2_QUZ-yb_0T.jpeg'}
+                        heading='Data Science & AI with GenAI'
+                        dets='Build real scalable products used by thousands of users, DevOps, system design, and startup building all inside one live Hindi cohort.'
+                        price='6,999'
+                        discount='40% off'
+                    />
+
+                    <CourseCard
+                        img={'https://ik.imagekit.io/sheryians/courses_gif/Front-End_Domination__Create_Anything_with_Code-FRONTENDTHUBNAIL_Wf8WqcNJx.jpg'}
+                        heading='Frontend Domination'
+                        dets='Build real scalable products used by thousands of users, learn AI engineering, full stack development, DevOps, system design, and startup building all inside one live Hindi cohort.'
+                        price='3,899'
+                        discount='30% off'
+                    />
+                </div>
+            </section>
+
+            {/* testimonials section   */}
+            <section className='border my-4 py-4 px-2 rounded-xl'>
+
+                <h2 className=' capitalize my-4 text-4xl text-[#6C1BD9] font-semibold text-center mb-6 md:text-5xl'>Testimonials </h2>
+
+                {/* swiper slider  */}
+                <Swiper
+                    spaceBetween={30}
+                    slidesPerView={1}
+                    breakpoints={{
+                        768: { slidesPerView: 2 },
+                        1024: { slidesPerView: 3 },
+                    }}
+                    pagination={{ clickable: true }}
+                    modules={[Pagination]}
+                    className='h-[80vh]'
+                >
+                    <SwiperSlide className='border border-gray-500 rounded-xl h-full overflow-hidden'>
+
+                        <div className="h-full w-full rounded-xl">
+
+                            <Plyr
+                                source={{
+                                    type: "video",
+                                    sources: [
+                                        {
+                                            src: video1,
+                                            type: "video/mp4",
+                                        },
+                                    ],
+                                }}
+                                options={{
+                                    controls: ["play"]
+                                }}
+                            />
+
+                        </div>
+
+                    </SwiperSlide>
+
+                    <SwiperSlide className='border border-gray-500 rounded-xl overflow-hidden'>
+
+                        <div className="h-full w-full rounded-xl">
+
+                            <Plyr
+                                source={{
+                                    type: "video",
+                                    sources: [
+                                        {
+                                            src: video2,
+                                            type: "video/mp4",
+                                        },
+                                    ],
+                                }}
+                                options={{
+                                    controls: ["play"]
+                                }}
+                            />
+
+                        </div>
+
+                    </SwiperSlide>
+                    <SwiperSlide className='border border-gray-500 rounded-xl overflow-hidden'>
+
+                        <div className="h-full w-full rounded-xl">
+
+                            <Plyr
+                                source={{
+                                    type: "video",
+                                    sources: [
+                                        {
+                                            src: video3,
+                                            type: "video/mp4",
+                                        },
+                                    ],
+                                }}
+                                options={{
+                                    controls: ["play"]
+                                }}
+                            />
+
+                        </div>
+
+                    </SwiperSlide>
+                    <SwiperSlide className='border border-gray-500 rounded-xl overflow-hidden'>
+
+                        <div className="h-full w-full rounded-xl">
+
+                            <Plyr
+                                source={{
+                                    type: "video",
+                                    sources: [
+                                        {
+                                            src: video4,
+                                            type: "video/mp4",
+                                        },
+                                    ],
+                                }}
+                                options={{
+                                    controls: ["play"]
+                                }}
+                            />
+
+                        </div>
+
+                    </SwiperSlide>
+
+
+                    <SwiperSlide className='border border-gray-500 rounded-xl overflow-hidden'>
+
+                        <div className="h-full w-full rounded-xl">
+
+                            <Plyr
+                                source={{
+                                    type: "video",
+                                    sources: [
+                                        {
+                                            src: video5,
+                                            type: "video/mp4",
+                                        },
+                                    ],
+                                }}
+                                options={{
+                                    controls: ["play"]
+                                }}
+                            />
+
+                        </div>
+
+                    </SwiperSlide>
+
+                    <SwiperSlide className='border border-gray-500 rounded-xl overflow-hidden'>
+
+                        <div className="h-full w-full rounded-xl">
+
+                            <Plyr
+                                source={{
+                                    type: "video",
+                                    sources: [
+                                        {
+                                            src: video6,
+                                            type: "video/mp4",
+                                        },
+                                    ],
+                                }}
+                                options={{
+                                    controls: ["play"]
+                                }}
+                            />
+
+                        </div>
+
+                    </SwiperSlide>
+
+                    <SwiperSlide className='border border-gray-500 rounded-xl overflow-hidden'>
+
+                        <div className="h-full w-full rounded-xl">
+
+                            <Plyr
+                                source={{
+                                    type: "video",
+                                    sources: [
+                                        {
+                                            src: video7,
+                                            type: "video/mp4",
+                                        },
+                                    ],
+                                }}
+                                options={{
+                                    controls: ["play"]
+                                }}
+                            />
+
+                        </div>
+
+                    </SwiperSlide>
+
+                    <SwiperSlide className='border border-gray-500 rounded-xl overflow-hidden'>
+
+                        <div className="h-full w-full rounded-xl">
+
+                            <Plyr
+                                source={{
+                                    type: "video",
+                                    sources: [
+                                        {
+                                            src: video8,
+                                            type: "video/mp4",
+                                        },
+                                    ],
+                                }}
+                                options={{
+                                    controls: ["play"]
+                                }}
+                            />
+
+                        </div>
+
+                    </SwiperSlide>
+                </Swiper >
+            </section>
+
+            {/* faq section  */}
+            <section className='border my-4 py-4 px-2 rounded-xl'>
+
+                <h2 className=' capitalize my-1 text-4xl text-[#6C1BD9] font-semibold text-center mb-6 md:text-5xl'>FAQs</h2>
+                <div className='flex flex-col gap-4 md:w-1/2 md:justify-center md:mx-auto'>
+
+                    <div className="collapse collapse-arrow bg-base-100 border border-gray-400">
+                        <input type="radio" name="my-accordion-2" defaultChecked />
+                        <div className="collapse-title font-bold md:text-xl text-[#4231c5]">How do I create an account?</div>
+                        <div className="collapse-content text-sm text-gray-600">Click the "Sign Up" button in the top right corner and follow the registration process.</div>
+                    </div>
+
+                    <div className="collapse collapse-arrow bg-base-100 border border-gray-400">
+                        <input type="radio" name="my-accordion-2" />
+                        <div className="collapse-title font-bold md:text-xl text-[#4231c5]">I forgot my password. What should I do?</div>
+                        <div className="collapse-content text-sm text-gray-600">Click on "Forgot Password" on the login page and follow the instructions sent to your email.</div>
+                    </div>
+
+                    <div className="collapse collapse-arrow bg-base-100 border border-gray-400">
+                        <input type="radio" name="my-accordion-2" />
+                        <div className="collapse-title font-bold md:text-xl text-[#4231c5]">How do I update my profile information?</div>
+                        <div className="collapse-content text-sm text-gray-600">Go to "My Account" settings and select "Edit Profile" to make changes.</div>
+                    </div>
+
+                </div>
             </section>
 
         </>

@@ -1,4 +1,16 @@
 @import "tailwindcss";
+@plugin "daisyui";
+
+.plyr,
+.plyr__video-wrapper,
+.plyr video {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.plyr video {
+  object-fit: cover; /* 🔥 fills completely */
+}
 
 @font-face {
     font-family: 'poppins';

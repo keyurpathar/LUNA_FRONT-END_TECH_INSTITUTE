@@ -17,7 +17,7 @@ const CourseCard = ({img , heading , dets , price , discount }) => {
             <div className='my-4 flex flex-col gap-3'>
 
                 <h3
-                    className='text-3xl font-semibold text-[#6C1BD9] md:text-4xl'
+                    className='text-2xl font-semibold text-[#6C1BD9] md:text-4xl'
                 >
                     {heading}
                 </h3>

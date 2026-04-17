@@ -19,7 +19,7 @@ const Header = () => {
 
                 {/* logo   */}
                 <div className='border w-fit rounded-lg'>
-                    <Link>
+                    <Link to={'/'}>
                         <img
                             src={logo}
                             alt="An logo of a company"
@@ -32,11 +32,23 @@ const Header = () => {
                 {/* desktop menu  */}
                 {/* links  */}
                 <nav className='flex gap-4 hidden  md:flex'>
-                    <Link className='px-4 py-1 border border-gray-400 text-center my-1 rounded hover:bg-purple-500 hover:text-white transition-all duration-200 ease-in-out'>Home</Link>
-                    <Link className='px-4 py-1 border border-gray-400 text-center my-1 rounded hover:bg-purple-500 hover:text-white transition-all duration-200 ease-in-out'>Courses</Link>
-                    <Link className='px-4 py-1 border border-gray-400 text-center my-1 rounded hover:bg-purple-500 hover:text-white transition-all duration-200 ease-in-out'>About Us</Link>
+                    <Link
+                        to={'/'}
+                        className='px-4 py-1 border border-gray-400 text-center my-1 rounded hover:bg-purple-500 hover:text-white transition-all duration-200 ease-in-out'>Home</Link>
+                    <Link
+                        to={'/course'}
+                        className='px-4 py-1 border border-gray-400 text-center my-1 rounded hover:bg-purple-500 hover:text-white transition-all duration-200 ease-in-out'
+                    >
+                        Courses
+                    </Link>
+                    <Link
+                        to={'/about'}
+                        className='px-4 py-1 border border-gray-400 text-center my-1 rounded hover:bg-purple-500 hover:text-white transition-all duration-200 ease-in-out'
+                        >
+                            About Us
+                    </Link>
                     <Link className='px-4 py-1 border border-gray-400 text-center my-1 rounded hover:bg-purple-500 hover:text-white transition-all duration-200 ease-in-out'>Contact Us</Link>
-                                        <Link className='px-4 py-1 border border-gray-400 text-center my-1 rounded hover:bg-purple-500 hover:text-white transition-all duration-200 ease-in-out'>Request Callback</Link>
+                    <Link className='px-4 py-1 border border-gray-400 text-center my-1 rounded hover:bg-purple-500 hover:text-white transition-all duration-200 ease-in-out'>Request Callback</Link>
                 </nav>
 
                 {/* buttons  */}
@@ -69,9 +81,9 @@ const Header = () => {
                 open &&
                 <>
                     <nav className='my-4 md:hidden'>
-                        <Link className='block border text-center my-1 rounded'>Home</Link>
-                        <Link className='block border text-center my-1 rounded'>Courses</Link>
-                        <Link className='block border text-center my-1 rounded'>About Us</Link>
+                        <Link to={'/'} className='block border text-center my-1 rounded'>Home</Link>
+                        <Link to={'/course'} className='block border text-center my-1 rounded'>Courses</Link>
+                        <Link to={'/about'} className='block border text-center my-1 rounded'>About Us</Link>
                         <Link className='block border text-center my-1 rounded'>Contact Us</Link>
                         <Link className='block border text-center my-1 rounded'>Request Callback</Link>
                     </nav>

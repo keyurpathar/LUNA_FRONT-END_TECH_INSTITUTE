@@ -4,12 +4,13 @@
 .plyr,
 .plyr__video-wrapper,
 .plyr video {
-  height: 100% !important;
-  width: 100% !important;
+    height: 100% !important;
+    width: 100% !important;
 }
 
 .plyr video {
-  object-fit: cover; /* 🔥 fills completely */
+    object-fit: cover;
+    /* 🔥 fills completely */
 }
 
 @font-face {
@@ -144,7 +145,8 @@
 }
 
 
-@theme{
-  --font-pop: 'poppins', sans-serif;
-  --font-lato: 'lato', sans-serif;
+@theme {
+    --font-pop: 'poppins', sans-serif;
+    --font-lato: 'lato', sans-serif;
 }
+

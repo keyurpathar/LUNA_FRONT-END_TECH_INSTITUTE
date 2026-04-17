@@ -12,7 +12,7 @@ const Header = () => {
 
     return (
 
-        <header>
+        <header className='sticky top-0 backdrop-blur-md z-100'>
 
             <div className='flex justify-between items-center'>
 
@@ -33,8 +33,10 @@ const Header = () => {
                 {/* links  */}
                 <nav className='flex gap-4 hidden  md:flex'>
                     <Link className='px-4 py-1 border border-gray-400 text-center my-1 rounded hover:bg-purple-500 hover:text-white transition-all duration-200 ease-in-out'>Home</Link>
-                    <Link className='px-4 py-1 border border-gray-400 text-center my-1 rounded hover:bg-purple-500 hover:text-white transition-all duration-200 ease-in-out'>Store</Link>
-                    <Link className='px-4 py-1 border border-gray-400 text-center my-1 rounded hover:bg-purple-500 hover:text-white transition-all duration-200 ease-in-out'>Course</Link>
+                    <Link className='px-4 py-1 border border-gray-400 text-center my-1 rounded hover:bg-purple-500 hover:text-white transition-all duration-200 ease-in-out'>Courses</Link>
+                    <Link className='px-4 py-1 border border-gray-400 text-center my-1 rounded hover:bg-purple-500 hover:text-white transition-all duration-200 ease-in-out'>About Us</Link>
+                    <Link className='px-4 py-1 border border-gray-400 text-center my-1 rounded hover:bg-purple-500 hover:text-white transition-all duration-200 ease-in-out'>Contact Us</Link>
+                                        <Link className='px-4 py-1 border border-gray-400 text-center my-1 rounded hover:bg-purple-500 hover:text-white transition-all duration-200 ease-in-out'>Request Callback</Link>
                 </nav>
 
                 {/* buttons  */}
@@ -68,8 +70,10 @@ const Header = () => {
                 <>
                     <nav className='my-4 md:hidden'>
                         <Link className='block border text-center my-1 rounded'>Home</Link>
-                        <Link className='block border text-center my-1 rounded'>Store</Link>
-                        <Link className='block border text-center my-1 rounded'>Course</Link>
+                        <Link className='block border text-center my-1 rounded'>Courses</Link>
+                        <Link className='block border text-center my-1 rounded'>About Us</Link>
+                        <Link className='block border text-center my-1 rounded'>Contact Us</Link>
+                        <Link className='block border text-center my-1 rounded'>Request Callback</Link>
                     </nav>
 
                     <div className='md:hidden'>

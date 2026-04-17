@@ -25,9 +25,46 @@ import video6 from '../assets/videos/reel-6.mp4'
 import video7 from '../assets/videos/reel-7.mp4'
 import video8 from '../assets/videos/reel-8.mp4'
 
+import inqueryImg from '../assets/images/inquery.svg'
+import { useFormik } from 'formik'
+import * as Yup from 'yup'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
+
 const Home = () => {
+
+    const isMobile = window.innerWidth < 768
+
+    const validationSchema = Yup.object({
+        name: Yup.string().required('Name is required'),
+        email: Yup.string().email('Invalid email format').required('Email is required'),
+        contact: Yup.string().min(10, 'Contact must be at least 10 characters').max(10, 'Contact must be at most 10 characters').required('Contact is required'),
+        query: Yup.string().required('Query is required')
+    })
+
+
+    const formik = useFormik({
+        initialValues: {
+            name: '',
+            email: '',
+            contact: '',
+            query: ''
+        },
+        validationSchema: validationSchema,
+        onSubmit: (values, { resetForm }) => {
+            console.log(values)
+            resetForm()
+        }
+    }
+    )
+
+
     return (
         <>
+
+            <ToastContainer position={isMobile ? "top-right" : "bottom-center"} autoClose={2000} />
+
             {/* // hero section */}
             <section className='my-4'>
 
@@ -434,25 +471,129 @@ const Home = () => {
 
                     <div className="collapse collapse-arrow bg-base-100 border border-gray-400">
                         <input type="radio" name="my-accordion-2" defaultChecked />
-                        <div className="collapse-title font-bold md:text-xl text-[#4231c5]">How do I create an account?</div>
-                        <div className="collapse-content text-sm text-gray-600">Click the "Sign Up" button in the top right corner and follow the registration process.</div>
+                        <div className="collapse-title font-bold md:text-xl text-[#4231c5]">What courses do you offer?</div>
+                        <div className="collapse-content text-sm text-gray-600">We offer courses in Full Stack Development, Data Science, AI, and Frontend Development. All courses are project-based and focused on real-world skills.</div>
                     </div>
 
                     <div className="collapse collapse-arrow bg-base-100 border border-gray-400">
                         <input type="radio" name="my-accordion-2" />
-                        <div className="collapse-title font-bold md:text-xl text-[#4231c5]">I forgot my password. What should I do?</div>
-                        <div className="collapse-content text-sm text-gray-600">Click on "Forgot Password" on the login page and follow the instructions sent to your email.</div>
+                        <div className="collapse-title font-bold md:text-xl text-[#4231c5]">Do I need prior coding experience?</div>
+                        <div className="collapse-content text-sm text-gray-600">No. Beginners are welcome. We start from basics and gradually move to advanced topics.</div>
                     </div>
 
                     <div className="collapse collapse-arrow bg-base-100 border border-gray-400">
                         <input type="radio" name="my-accordion-2" />
-                        <div className="collapse-title font-bold md:text-xl text-[#4231c5]">How do I update my profile information?</div>
-                        <div className="collapse-content text-sm text-gray-600">Go to "My Account" settings and select "Edit Profile" to make changes.</div>
+                        <div className="collapse-title font-bold md:text-xl text-[#4231c5]">Do you provide placement support?</div>
+                        <div className="collapse-content text-sm text-gray-600">Yes. We offer resume building, mock interviews, and job guidance to help you get hired.</div>
+                    </div>
+
+                     <div className="collapse collapse-arrow bg-base-100 border border-gray-400">
+                        <input type="radio" name="my-accordion-2" />
+                        <div className="collapse-title font-bold md:text-xl text-[#4231c5]">Will I get a certificate?</div>
+                        <div className="collapse-content text-sm text-gray-600">Yes. You will receive a certificate after successfully completing the course.</div>
+                    </div>
+
+                     <div className="collapse collapse-arrow bg-base-100 border border-gray-400">
+                        <input type="radio" name="my-accordion-2" />
+                        <div className="collapse-title font-bold md:text-xl text-[#4231c5]">What if I miss a live class?</div>
+                        <div className="collapse-content text-sm text-gray-600">No problem. You can watch the recorded session anytime.</div>
+                    </div>
+
+                     <div className="collapse collapse-arrow bg-base-100 border border-gray-400">
+                        <input type="radio" name="my-accordion-2" />
+                        <div className="collapse-title font-bold md:text-xl text-[#4231c5]">How can I contact support?</div>
+                        <div className="collapse-content text-sm text-gray-600">You can reach us through email, WhatsApp, or the contact form on our website.</div>
                     </div>
 
                 </div>
             </section>
 
+            {/* inquery section  */}
+            <section className='border my-4 py-4 px-2 rounded-xl'>
+
+                <div className='flex flex-col gap-4 md:flex-row md:justify-evenly md:items-center md:gap-4'>
+
+                    <div id="left-inqury-sec" className=' md:w-2/5'>
+                        <img src={inqueryImg} alt="Inquiry" className='' />
+                    </div>
+
+                    <div id="right-inqury-sec"
+                        className='border border-gray-500 rounded-xl px-2 py-4 bg-blue-600 text-white w-full md:w-1/2 md:px-8'
+                    >
+                        <h2 className='text-lg my-2 font-semibold md:text-3xl'>Having doubts? Let's get in touch!</h2>
+                        <p className='font-medium text-sm md:text-lg'>Fill the details and request a callback</p>
+
+                        <form className='my-4' onSubmit={formik.handleSubmit}>
+
+                            <div>
+                                <input
+                                    type="text"
+                                    placeholder='Your Name'
+                                    name='name'
+                                    value={formik.values.name}
+                                    onChange={formik.handleChange}
+                                    className='border border-gray-300 rounded w-full px-2 py-2 my-4 focus:border-gray-50 focus:border focus:outline-0 '
+                                />
+
+                            </div>
+
+                            <div>
+                                <input
+                                    type="text"
+                                    placeholder='Your Email'
+                                    name='email'
+                                    value={formik.values.email}
+                                    onChange={formik.handleChange}
+                                    className='border border-gray-300 rounded w-full px-2 py-2 my-4 focus:border-gray-50 focus:border focus:outline-0 '
+                                />
+
+                            </div>
+
+                            <div>
+                                <input
+                                    type="text"
+                                    placeholder='Your Contact'
+                                    name='contact'
+                                    value={formik.values.contact}
+                                    onChange={formik.handleChange}
+                                    className='border border-gray-300 rounded w-full px-2 py-2 my-4 focus:border-gray-50 focus:border focus:outline-0 '
+                                />
+
+                            </div>
+
+                            <div>
+                                <input
+                                    type="text"
+                                    placeholder='Type your query here'
+                                    name='query'
+                                    value={formik.values.query}
+                                    onChange={formik.handleChange}
+                                    className='border border-gray-300 rounded w-full px-2 py-2 my-4 focus:border-gray-50 focus:border focus:outline-0 '
+                                />
+
+                            </div>
+
+                            <button
+                                type='submit'
+                                onClick={() => {
+                                    if (Object.keys(formik.errors).length > 0) {
+                                        const firstError = Object.values(formik.errors)[0]
+                                        toast.error(firstError)
+                                    }
+                                }}
+                                className='w-full font-semibold bg-[#2b1aac] py-2 rounded active:scale-90 transition-all duration-300 md:hover:bg-[#2b1aaccc]  hover:border-0 text-white text-lg'
+                            >
+                                Submit
+                            </button>
+
+
+                        </form>
+                    </div>
+
+                </div>
+
+            </section >
+            
         </>
     )
 }

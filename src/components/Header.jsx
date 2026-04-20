@@ -44,23 +44,23 @@ const Header = () => {
                     <Link
                         to={'/about'}
                         className='px-4 py-1 border border-gray-400 text-center my-1 rounded hover:bg-purple-500 hover:text-white transition-all duration-200 ease-in-out'
-                        >
-                            About Us
+                    >
+                        About Us
                     </Link>
                     <Link to={'/contact'} className='px-4 py-1 border border-gray-400 text-center my-1 rounded hover:bg-purple-500 hover:text-white transition-all duration-200 ease-in-out'>Contact Us</Link>
-                    <Link to={'/request-callback'} className='px-4 py-1 border border-gray-400 text-center my-1 rounded hover:bg-purple-500 hover:text-white transition-all duration-200 ease-in-out'>Request Callback</Link>
+                    {/* <Link to={'/request-callback'} className='px-4 py-1 border border-gray-400 text-center my-1 rounded hover:bg-purple-500 hover:text-white transition-all duration-200 ease-in-out'>Request Callback</Link> */}
                 </nav>
 
                 {/* buttons  */}
                 <div className='flex gap-4 hidden md:block'>
 
-                    <Button
-                        name={'Sign Up'}
+                    <Link
+                        to='signUp'
                         className='px-4 py-2 mx-2 border rounded-lg text-center text-white  bg-blue-600 cursor-pointer  active:scale-95 hover:bg-blue-950 transition-all duration-200 ease-in-out'
-                    />
-                    <Button name={'Login'}
+                    >Sign Up</Link>
+                    <Link to='login'
                         className='px-4 py-2 mx-2 border rounded-lg text-center text-white  bg-blue-600 cursor-pointer  active:scale-95 hover:bg-blue-950 transition-all duration-200 ease-in-out'
-                    />
+                    >Login</Link>
 
                 </div>
 
@@ -85,12 +85,12 @@ const Header = () => {
                         <Link to={'/course'} className='block border text-center my-1 rounded'>Courses</Link>
                         <Link to={'/about'} className='block border text-center my-1 rounded'>About Us</Link>
                         <Link to={'/contact'} className='block border text-center my-1 rounded'>Contact Us</Link>
-                        <Link to={'/request-callback'} className='block border text-center my-1 rounded'>Request Callback</Link>
+                        {/* <Link to={'/request-callback'} className='block border text-center my-1 rounded'>Request Callback</Link> */}
                     </nav>
 
                     <div className='md:hidden'>
-                        <Button name={'Sign Up'} className='w-full py-1 border text-center my-1 rounded bg-blue-600 text-white active:bg-blue-950 transition-all duration-200 ease-in-out' />
-                        <Button name={'Login'} className='w-full py-1 border text-center my-1 rounded bg-blue-600 text-white active:bg-blue-950 transition-all duration-200 ease-in-out' />
+                        <Link to='signUp' name={'Sign Up'} className='w-full py-1 bg-blue-600 text-white active:bg-blue-950 transition-all duration-200 ease-in-out block border text-center my-1 rounded'>Sign Up</Link>
+                        <Link to='login' name={'Login'} className='w-full py-1 bg-blue-600 text-white active:bg-blue-950 transition-all duration-200 ease-in-out block border text-center my-1 rounded'>Login</Link>
                     </div>
                 </>
             }

@@ -8,26 +8,30 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import Login from './pages/Login'
 import SignUp from './pages/signUp'
+import { ReactLenis } from 'lenis/react'
 
 const App = () => {
   return (
-    <div className='px-3 py-2 md:px-8 font-lato'>
-      <Header />
+    <ReactLenis root options={{ lerp: 0.05, wheelMultiplier: 1, smoothTouch: true }}>
+      <div className='px-3 py-2 md:px-8 font-lato'>
+        <Header />
 
-      <ScrollToTop />
+        <ScrollToTop />
 
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/course' element={<Courses />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/signup' element={<SignUp />} />
+        <Routes>
+          
+          <Route path='/' element={<Home />} />
+          <Route path='/course' element={<Courses />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<SignUp />} />
 
-      </Routes>
+        </Routes>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </ReactLenis>
   )
 }
 

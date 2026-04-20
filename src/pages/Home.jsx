@@ -25,6 +25,7 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { Link } from 'react-router-dom'
 
 
 const Home = () => {
@@ -90,8 +91,8 @@ const Home = () => {
                         </p>
 
                         <div id="left-hero-btn" className='flex gap-4'>
-                            <Button className='px-4 py-1 rounded-xl bg-[#4F39F6] text-white text-base active:scale-95 transition-all duration-300 md:px-4 md:py-4 md:text-xl cursor-pointer md:hover:bg-[rgb(79,57,249,0.8)]  hover:border-0' name='Learn More' />
-                            <Button className='px-4 py-1 rounded-xl bg-[#4F39F6] text-white text-base active:scale-95 transition-all duration-300 md:px-4 md:py-4 md:text-xl cursor-pointer md:hover:bg-[rgb(79,57,249,0.8)]  hover:border-0' name='Explore Courses' />
+                            <Link to='/about' className='px-4 py-1 rounded-xl bg-[#4F39F6] text-white text-base active:scale-95 transition-all duration-300 md:px-4 md:py-4 md:text-xl cursor-pointer md:hover:bg-[rgb(79,57,249,0.8)]  hover:border-0' name=''> Learn More </Link>
+                            <Link to='/course' className='px-4 py-1 rounded-xl bg-[#4F39F6] text-white text-base active:scale-95 transition-all duration-300 md:px-4 md:py-4 md:text-xl cursor-pointer md:hover:bg-[rgb(79,57,249,0.8)]  hover:border-0' name='Explore Courses'> Explore Courses </Link>
                         </div>
 
                     </div>

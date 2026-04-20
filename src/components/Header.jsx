@@ -47,8 +47,8 @@ const Header = () => {
                         >
                             About Us
                     </Link>
-                    <Link className='px-4 py-1 border border-gray-400 text-center my-1 rounded hover:bg-purple-500 hover:text-white transition-all duration-200 ease-in-out'>Contact Us</Link>
-                    <Link className='px-4 py-1 border border-gray-400 text-center my-1 rounded hover:bg-purple-500 hover:text-white transition-all duration-200 ease-in-out'>Request Callback</Link>
+                    <Link to={'/contact'} className='px-4 py-1 border border-gray-400 text-center my-1 rounded hover:bg-purple-500 hover:text-white transition-all duration-200 ease-in-out'>Contact Us</Link>
+                    <Link to={'/request-callback'} className='px-4 py-1 border border-gray-400 text-center my-1 rounded hover:bg-purple-500 hover:text-white transition-all duration-200 ease-in-out'>Request Callback</Link>
                 </nav>
 
                 {/* buttons  */}
@@ -84,8 +84,8 @@ const Header = () => {
                         <Link to={'/'} className='block border text-center my-1 rounded'>Home</Link>
                         <Link to={'/course'} className='block border text-center my-1 rounded'>Courses</Link>
                         <Link to={'/about'} className='block border text-center my-1 rounded'>About Us</Link>
-                        <Link className='block border text-center my-1 rounded'>Contact Us</Link>
-                        <Link className='block border text-center my-1 rounded'>Request Callback</Link>
+                        <Link to={'/contact'} className='block border text-center my-1 rounded'>Contact Us</Link>
+                        <Link to={'/request-callback'} className='block border text-center my-1 rounded'>Request Callback</Link>
                     </nav>
 
                     <div className='md:hidden'>

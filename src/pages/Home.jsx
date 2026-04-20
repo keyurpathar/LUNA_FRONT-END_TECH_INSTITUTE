@@ -3,19 +3,15 @@ import Button from '../components/Button'
 import heroImg from '../assets/images/ankur-sir-removebg-preview.png'
 import { CircleDot } from 'lucide-react'
 import CountUp from 'react-countup'
-import { useRef, useState } from 'react';
-// Import Swiper React components
+import { useRef, useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-// import required modules
 import { Pagination } from 'swiper/modules';
 import CarousalCard from '../components/CarousalCard'
 import CourseCard from '../components/CourseCard'
 import { Plyr } from "plyr-react";
 import "plyr-react/plyr.css";
-
 import video1 from '../assets/videos/reel-1.mp4'
 import video2 from '../assets/videos/reel-2.mp4'
 import video3 from '../assets/videos/reel-3.mp4'
@@ -24,7 +20,6 @@ import video5 from '../assets/videos/reel-5.mp4'
 import video6 from '../assets/videos/reel-6.mp4'
 import video7 from '../assets/videos/reel-7.mp4'
 import video8 from '../assets/videos/reel-8.mp4'
-
 import inqueryImg from '../assets/images/inquery.svg'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
@@ -54,10 +49,17 @@ const Home = () => {
         validationSchema: validationSchema,
         onSubmit: (values, { resetForm }) => {
             console.log(values)
+            toast.success("Submitted successfully!")
             resetForm()
         }
-    }
-    )
+    })
+
+    useEffect(() => {
+        if (formik.submitCount > 0 && !formik.isValid) {
+            const firstError = Object.values(formik.errors)[0];
+            toast.error(firstError || "Please fill all fields correctly.");
+        }
+    }, [formik.submitCount, formik.isValid, formik.errors])
 
 
     return (
@@ -487,19 +489,19 @@ const Home = () => {
                         <div className="collapse-content text-sm text-gray-600">Yes. We offer resume building, mock interviews, and job guidance to help you get hired.</div>
                     </div>
 
-                     <div className="collapse collapse-arrow bg-base-100 border border-gray-400">
+                    <div className="collapse collapse-arrow bg-base-100 border border-gray-400">
                         <input type="radio" name="my-accordion-2" />
                         <div className="collapse-title font-bold md:text-xl text-[#4231c5]">Will I get a certificate?</div>
                         <div className="collapse-content text-sm text-gray-600">Yes. You will receive a certificate after successfully completing the course.</div>
                     </div>
 
-                     <div className="collapse collapse-arrow bg-base-100 border border-gray-400">
+                    <div className="collapse collapse-arrow bg-base-100 border border-gray-400">
                         <input type="radio" name="my-accordion-2" />
                         <div className="collapse-title font-bold md:text-xl text-[#4231c5]">What if I miss a live class?</div>
                         <div className="collapse-content text-sm text-gray-600">No problem. You can watch the recorded session anytime.</div>
                     </div>
 
-                     <div className="collapse collapse-arrow bg-base-100 border border-gray-400">
+                    <div className="collapse collapse-arrow bg-base-100 border border-gray-400">
                         <input type="radio" name="my-accordion-2" />
                         <div className="collapse-title font-bold md:text-xl text-[#4231c5]">How can I contact support?</div>
                         <div className="collapse-content text-sm text-gray-600">You can reach us through email, WhatsApp, or the contact form on our website.</div>
@@ -575,12 +577,6 @@ const Home = () => {
 
                             <button
                                 type='submit'
-                                onClick={() => {
-                                    if (Object.keys(formik.errors).length > 0) {
-                                        const firstError = Object.values(formik.errors)[0]
-                                        toast.error(firstError)
-                                    }
-                                }}
                                 className='w-full font-semibold bg-[#2b1aac] py-2 rounded active:scale-90 transition-all duration-300 md:hover:bg-[#2b1aaccc]  hover:border-0 text-white text-lg'
                             >
                                 Submit
@@ -593,7 +589,7 @@ const Home = () => {
                 </div>
 
             </section >
-            
+
         </>
     )
 }

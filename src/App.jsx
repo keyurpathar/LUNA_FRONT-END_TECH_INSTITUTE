@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 import Footer from './components/Footer'
 import Courses from './pages/Courses'
 import ScrollToTop from './components/ScrollToTop'
+import CourseDetail from './pages/CourseDetail'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Login from './pages/Login'
@@ -22,6 +23,7 @@ const App = () => {
           
           <Route path='/' element={<Home />} />
           <Route path='/course' element={<Courses />} />
+          <Route path='/course/:id' element={<CourseDetail />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/login' element={<Login />} />

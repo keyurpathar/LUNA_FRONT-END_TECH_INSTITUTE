@@ -2,6 +2,7 @@ import React from 'react'
 import sir from '../assets/images/ankur-sir-removebg-preview.png'
 import group from '../assets/images/community-bg.png'
 import CourseCard from '../components/CourseCard'
+import { courses } from '../data/courses'
 
 const Courses = () => {
     return (
@@ -35,77 +36,17 @@ const Courses = () => {
 
                 <div className='grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 '>
 
-                    <CourseCard
-                        img={'https://ik.imagekit.io/sheryians/courses/cohort3thumbnai_E9AGbX-rJ.webp'}
-                        heading='Cohort 3.0'
-                        dets='Build real scalable products used by thousands of users, learn AI engineering, full stack development, DevOps, system design, and startup building all inside one live Hindi cohort.'
-                        price='8,999'
-                        discount='20% off'
-                    />
-
-                    <CourseCard
-                        img={'https://ik.imagekit.io/sheryians/Cohort%202.0/cohort-3_ekZjBiRzc-2_76HU4-Mz5z.jpeg?updatedAt=1757741949621'}
-                        heading='Cohort 2.0'
-                        dets='Build real scalable products used by thousands of users, learn AI engineering, full stack development, DevOps, system design, and startup building all inside one live Hindi cohort.'
-                        price='7,999'
-                        discount='43% off'
-                    />
-
-                    <CourseCard
-                        img={'https://ik.imagekit.io/sheryians/courses_gif/undefined-Image_2_QUZ-yb_0T.jpeg'}
-                        heading='Data Science &  GenAI'
-                        dets='Build real scalable products used by thousands of users,learn AI engineering, full stack development, DevOps, DevOps, system design, and startup building all inside one live Hindi cohort.'
-                        price='6,999'
-                        discount='40% off'
-                    />
-
-                    <CourseCard
-                        img={'https://ik.imagekit.io/sheryians/courses_gif/Front-End_Domination__Create_Anything_with_Code-FRONTENDTHUBNAIL_Wf8WqcNJx.jpg'}
-                        heading='Frontend Domination'
-                        dets='Build real scalable products used by thousands of users, learn AI engineering, full stack development, DevOps, system design, and startup building all inside one live Hindi cohort.'
-                        price='3,899'
-                        discount='30% off'
-                    />
-
-                    <CourseCard
-                        img={'https://ik.imagekit.io/sheryians/courses_gif/undefined-maxresdefault_5-AHh9_1Y.jpg'}
-                        heading='ThreeJS Domination'
-                        dets='Build real scalable products used by thousands of users, learn AI engineering, full stack development, DevOps, system design, and startup building all inside one live Hindi cohort.'
-                        price='2,118'
-                        discount='56% off'
-                    />
-
-                    <CourseCard
-                        img={'https://ik.imagekit.io/sheryians/courses_gif/undefined-javaas_Large_jY0Wighav__6PygWBZQ.jpeg'}
-                        heading='Java Full Stack Dev'
-                        dets='Build real scalable products used by thousands of users, learn AI engineering, full stack development, DevOps, system design, and startup building all inside one live Hindi cohort.'
-                        price='4,236'
-                        discount='33% off'
-                    />
-
-                    <CourseCard
-                        img={'https://ik.imagekit.io/sheryians/courses_gif/undefined-apti_reasoning_45vyAnZ4y.jpeg'}
-                        heading='Aptitude & Reasoning for Campus Placements'
-                        dets='Build real scalable products used by thousands of users, learn AI engineering, full stack development, DevOps, system design, and startup building all inside one live Hindi cohort.'
-                        price='932'
-                        discount='10% off'
-                    />
-
-                    <CourseCard
-                        img={'https://ik.imagekit.io/sheryians/courses_gif/undefined-IMG_5100_7vO7pODI9.JPG'}
-                        heading='Job Ready AI Powered Cohort: Web + DSA'
-                        dets='Build real scalable products used by thousands of users, learn AI engineering, full stack development, DevOps, system design, and startup building all inside one live Hindi cohort.'
-                        price='5,999'
-                        discount='40% off'
-                    />
-
-                    <CourseCard
-                        img={'https://ik.imagekit.io/sheryians/courses_gif/undefined-web-dsa-thumb-10_ZKtPNgmW_.webp_Zhu2w1to5h.jpeg'}
-                        heading='DSA domination & Aptitude Reasoning Course'
-                        dets='Build real scalable products used by thousands of users, learn AI engineering, full stack development, DevOps, system design, and startup building all inside one live Hindi cohort.'
-                        price='6,600'
-                        discount='12% off'
-                    />
+                    {courses.map((course) => (
+                        <CourseCard
+                            key={course.id}
+                            id={course.id}
+                            img={course.img}
+                            heading={course.heading}
+                            dets={course.dets}
+                            price={course.price}
+                            discount={course.discount}
+                        />
+                    ))}
 
                 </div>
             </section>

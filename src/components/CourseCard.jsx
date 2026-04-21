@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Button from './Button'
 import { IndianRupee } from 'lucide-react'
 
-const CourseCard = ({img , heading , dets , price , discount }) => {
+const CourseCard = ({id , img , heading , dets , price , discount }) => {
     return (
-        <div className='bg-white px-3 py-3 border-2 border-gray-500 rounded-xl md:px-5 md:py-5 w-full'>
+        <Link to={`/course/${id}`} className='block bg-white px-3 py-3 border-2 border-gray-500 rounded-xl md:px-5 md:py-5 w-full hover:shadow-xl transition-shadow'>
 
             <div>
                 <img
@@ -35,7 +36,7 @@ const CourseCard = ({img , heading , dets , price , discount }) => {
 
                 <Button name='Enroll Now' className='bg-[#4F39F6] text-white active:bg-[#6C1BD9] active:scale-95 transition-all duration-200  rounded-lg py-2 md:text-xl' />
             </div>
-        </div>
+        </Link>
     )
 }
 

@@ -37,7 +37,7 @@ const CourseCard = ({id , img , heading , dets, fullDetails , price , discount }
 
                 <div className='flex items-center justify-between gap-4 mt-2'>
                     <p className='flex items-center text-xl font-black text-[#4F39F6] md:text-3xl'><IndianRupee />{price}</p>
-                    <p className='bg-green-300 text-green-800 font-semibold px-2 py-1 rounded-2xl text-sm md:text-base'>{discount + '% '}</p>
+                    <p className='bg-green-300 text-green-800 font-semibold px-2 py-1 rounded-2xl text-sm md:text-base'>{discount + '% off'}</p>
                 </div>
 
                 <Button name='Enroll Now' className='bg-[#4F39F6] text-white active:bg-[#6C1BD9] active:scale-95 transition-all duration-200  rounded-lg py-2 md:text-xl' />

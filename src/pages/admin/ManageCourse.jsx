@@ -68,7 +68,7 @@ const ManageCourse = () => {
                         "http://localhost:5000/course/addCourse",
                         backendData
                     );
-                    alert("Course Added Successfully ");
+                    alert("Course Added Successfully");
                 }
 
                 resetForm();
@@ -76,7 +76,7 @@ const ManageCourse = () => {
 
             } catch (err) {
                 console.log(err);
-                alert("Something went wrong ");
+                alert("Something went wrong");
             }
         }
     })
@@ -102,12 +102,6 @@ const ManageCourse = () => {
             await axios.delete(`http://localhost:5000/course/deleteCourse/${id}`);
             alert("Course Deleted");
             fetchCourses();
-
-            // If they delete the course while editing it, clear the form!
-            if (editId === id) {
-                setEditId(null);
-                formik.resetForm();
-            }
         } catch (err) {
             console.log(err);
             alert("Failed to delete course");
@@ -161,7 +155,7 @@ const ManageCourse = () => {
                         <div className='flex flex-col md:flex-row gap-5'>
                             {/* Course Price */}
                             <div className='flex flex-col flex-1'>
-                                <label className='font-semibold text-gray-700 mb-1'>Price ($) :</label>
+                                <label className='font-semibold text-gray-700 mb-1'>Price (₹) :</label>
                                 <input
                                     type="text"
                                     name="coursePrice"
@@ -294,7 +288,7 @@ const ManageCourse = () => {
                                     </td>
                                     <td className="py-3 px-4 font-semibold text-gray-800">{course.name}</td>
                                     <td className="py-3 px-4 text-sm text-gray-600 max-w-xs truncate">{course.details}</td>
-                                    <td className="py-3 px-4 text-green-600 font-bold">${course.price}</td>
+                                    <td className="py-3 px-4 text-green-600 font-bold">₹{course.price}</td>
                                     <td className="py-3 px-4 text-red-500 font-semibold">{course.discount}%</td>
                                     <td className="py-3 px-4 whitespace-nowrap text-right">
                                         <button

@@ -48,13 +48,11 @@ const App = () => {
           <Route path='/admin' element={<AdminLogin />} />
           <Route path='/admin/register' element={<AdminRegister />} />
 
-          {/* This route has no path! It just wraps the routes inside it with the Layout and Protection */}
           <Route element={
             <ProtectedAdminRoute>
               <AdminLayout />
             </ProtectedAdminRoute>
           }>
-            {/* These will replace the <Outlet /> inside AdminLayout */}
             <Route path='/admin/dashboard' element={<Dashboard />} />
             <Route path='/admin/course' element={<ManageCourse />} />
             <Route path='/admin/contact' element={<ManageContact />} />

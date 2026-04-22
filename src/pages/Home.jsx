@@ -26,12 +26,28 @@ import * as Yup from 'yup'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 import { courses } from '../data/courses'
 
 
 const Home = () => {
 
     const isMobile = window.innerWidth < 768
+    const [dbCourses, setDbCourses] = useState([])
+
+    useEffect(() => {
+        const fetchCourses = async () => {
+            try {
+                const res = await axios.get("http://localhost:5000/course");
+                if (res.data.success) {
+                    setDbCourses(res.data.data);
+                }
+            } catch (err) {
+                console.error("Error fetching courses", err);
+            }
+        }
+        fetchCourses();
+    }, [])
 
     const validationSchema = Yup.object({
         name: Yup.string().required('Name is required'),
@@ -231,13 +247,13 @@ const Home = () => {
 
                 <div className='grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 '>
 
-                    {courses.slice(0, 4).map((course) => (
+                    {dbCourses.slice(0, 4).map((course) => (
                         <CourseCard
-                            key={course.id}
-                            id={course.id}
-                            img={course.img}
-                            heading={course.heading}
-                            dets={course.dets}
+                            key={course._id}
+                            id={course._id}
+                            img={course.img_url}
+                            heading={course.name}
+                            dets={course.details}
                             price={course.price}
                             discount={course.discount}
                         />

@@ -1,13 +1,35 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { courses } from '../data/courses';
+import axios from 'axios';
 import Button from '../components/Button';
 import { IndianRupee, ArrowLeft } from 'lucide-react';
 
 const CourseDetail = () => {
     const { id } = useParams();
-    const course = courses.find((c) => c.id === id);
-    // console.log(course)
+    const [course, setCourse] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchCourse = async () => {
+            try {
+                // Fetching all courses and filtering since there is no specific getCourseById endpoint
+                const res = await axios.get("http://localhost:5000/course");
+                if (res.data.success) {
+                    const foundCourse = res.data.data.find(c => c._id === id);
+                    setCourse(foundCourse);
+                }
+            } catch (err) {
+                console.error("Error fetching course", err);
+            } finally {
+                setLoading(false);
+            }
+        }
+        fetchCourse();
+    }, [id]);
+
+    if (loading) {
+        return <div className="min-h-[50vh] flex items-center justify-center">Loading course details...</div>;
+    }
 
     if (!course) {
         return (
@@ -27,8 +49,8 @@ const CourseDetail = () => {
             <div className="flex justify-center items-center flex-col gap-8">
                 <div className="w-full md:w-3/4">
                     <img
-                        src={course.img}
-                        alt={course.heading}
+                        src={course.img_url}
+                        alt={course.name}
                         className="w-full h-auto rounded-xl object-cover shadow-sm"
                     />
                 </div>
@@ -36,26 +58,22 @@ const CourseDetail = () => {
                 <div className="w-full md:w-3/4 flex flex-col justify-between">
                     <div>
                         <h1 className="text-3xl md:text-5xl font-bold text-[#6C1BD9] mb-4">
-                            {course.heading}
+                            {course.name}
                         </h1>
-                        {/* <p className="text-base text-gray-700 leading-relaxed mb-6 md:text-lg">
-                            {course.dets}
-                        </p> */}
                         <p className='text-base text-gray-700 leading-relaxed mb-6 md:text-lg'>
-                            {course.fulldets}
+                            {course.fullDetails}
                         </p>
                     </div>
 
                     <div className="bg-gray-50 p-4 rounded-xl border border-gray-100 flex flex-col gap-4">
                         <div className="flex items-center justify-between">
-                            {/* <span className="text-gray-500 font-medium">Price</span> */}
                             <div className="flex justify-between w-full  items-center gap-2">
 
                                 <p className="flex items-center text-3xl font-black text-[#4F39F6]">
                                     <IndianRupee size={26} />{course.price}
                                 </p>
                                 <p className="bg-green-300 text-green-800 font-bold px-3 py-1 rounded-full text-sm">
-                                    {course.discount}
+                                    {course.discount}%
                                 </p>
                             </div>
                         </div>
@@ -72,3 +90,4 @@ const CourseDetail = () => {
 };
 
 export default CourseDetail;
+

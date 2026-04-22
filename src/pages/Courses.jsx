@@ -1,10 +1,28 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 import sir from '../assets/images/ankur-sir-removebg-preview.png'
 import group from '../assets/images/community-bg.png'
 import CourseCard from '../components/CourseCard'
 import { courses } from '../data/courses'
 
 const Courses = () => {
+    const [dbCourses, setDbCourses] = useState([]);
+
+    useEffect(() => {
+        const fetchCourses = async () => {
+            try {
+                const res = await axios.get("http://localhost:5000/course");
+                if (res.data.success) {
+                    setDbCourses(res.data.data);
+                    console.log(dbCourses)
+                }
+            } catch (err) {
+                console.error("Error fetching courses", err);
+            }
+        }
+        fetchCourses();
+    }, []);
+
     return (
 
         <>
@@ -36,13 +54,14 @@ const Courses = () => {
 
                 <div className='grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 '>
 
-                    {courses.map((course) => (
+                    {dbCourses.map((course) => (
                         <CourseCard
-                            key={course.id}
-                            id={course.id}
-                            img={course.img}
-                            heading={course.heading}
-                            dets={course.dets}
+                            key={course._id}
+                            id={course._id}
+                            img={course.img_url}
+                            heading={course.name}
+                            dets={course.details}
+                            fullDetails={course.fullDetails}
                             price={course.price}
                             discount={course.discount}
                         />

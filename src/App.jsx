@@ -10,9 +10,14 @@ import Contact from './pages/Contact'
 import Login from './pages/Login'
 import SignUp from './pages/signUp'
 import { ReactLenis } from 'lenis/react'
-// import Dashboard from './pages/admin/Dashboard'
 import { useLocation } from "react-router-dom";
-// import CourseAdmin from './pages/admin/CourseAdmin'
+import AdminRegister from './pages/admin/AdminRegister'
+import AdminLogin from './pages/admin/AdminLogin'
+import Dashboard from './pages/admin/Dashboard'
+import ProtectedAdminRoute from './pages/admin/ProtectedAdminRoute'
+import ManageCourse from './pages/admin/ManageCourse'
+import AdminLayout from './components/admin/AdminLayout'
+import ManageContact from './pages/admin/ManageContact'
 
 const App = () => {
 
@@ -22,6 +27,7 @@ const App = () => {
 
   return (
     <ReactLenis root options={{ lerp: 0.05, wheelMultiplier: 1, smoothTouch: true }}>
+
       <div className='px-3 py-2 md:px-8 font-lato'>
         {!isAdmin && <Header />}
 
@@ -29,6 +35,7 @@ const App = () => {
 
         <Routes>
 
+          {/* user routes  */}
           <Route path='/' element={<Home />} />
           <Route path='/course' element={<Courses />} />
           <Route path='/course/:id' element={<CourseDetail />} />
@@ -37,20 +44,26 @@ const App = () => {
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
 
+          {/* admin routes  */}
+          <Route path='/admin' element={<AdminLogin />} />
+          <Route path='/admin/register' element={<AdminRegister />} />
 
+          {/* This route has no path! It just wraps the routes inside it with the Layout and Protection */}
+          <Route element={
+            <ProtectedAdminRoute>
+              <AdminLayout />
+            </ProtectedAdminRoute>
+          }>
+            {/* These will replace the <Outlet /> inside AdminLayout */}
+            <Route path='/admin/dashboard' element={<Dashboard />} />
+            <Route path='/admin/course' element={<ManageCourse />} />
+            <Route path='/admin/contact' element={<ManageContact />} />
+          </Route>
 
         </Routes>
 
         {!isAdmin && <Footer />}
 
-        {/*        <Routes>
-
-          admin routes 
-
-          <Route path='/admin' element={<Dashboard />} />
-           <Route path='/admin/course' element={<CourseAdmin />} />
-
-        </Routes> */}
 
 
 

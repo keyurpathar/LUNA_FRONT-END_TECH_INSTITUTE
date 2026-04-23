@@ -18,6 +18,7 @@ import ProtectedAdminRoute from './pages/admin/ProtectedAdminRoute'
 import ManageCourse from './pages/admin/ManageCourse'
 import AdminLayout from './components/admin/AdminLayout'
 import ManageContact from './pages/admin/ManageContact'
+import NotFound from './pages/NotFound'
 
 const App = () => {
 
@@ -43,6 +44,7 @@ const App = () => {
           <Route path='/contact' element={<Contact />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
+          <Route path='*' element={<NotFound />} />
 
           {/* admin routes  */}
           <Route path='/admin' element={<AdminLogin />} />

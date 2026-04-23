@@ -125,7 +125,7 @@ const Contact = () => {
                     </div>
 
                     {/* right side - contact us image  */}
-                    <div className='my-6  rounded-lg md:w-1/2'>
+                    <div className='my-6 rounded-lg md:w-1/2'>
                         <img src={contactimg} alt="contact us image" />
                     </div>
 

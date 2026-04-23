@@ -1,6 +1,7 @@
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const SignUp = () => {
 
@@ -33,7 +34,8 @@ const SignUp = () => {
 
                 <h1 className='text-center text-2xl md:text-3xl font-semibold text-[#6C1BD9]'>Sign Up</h1>
 
-                <div className='border p-4 rounded-lg flex justify-center items-center w-full md:w-1/2 lg:w-1/3'>
+                <div className='border border-gray-400 p-4 rounded-lg flex justify-center items-center w-full md:w-1/2 lg:w-1/3'>
+
 
                     <form
                         onSubmit={formik.handleSubmit}
@@ -97,11 +99,16 @@ const SignUp = () => {
                             )}
 
 
+                        <p className='text-center text-gray-500 text-sm'>Already have an account ?? <Link to='/login' className='text-blue-600 underline-none'>Login Here</Link></p>
+
                         <button type='submit' className='bg-[#6C1BD9] text-white rounded-md p-2'>Sign Up</button>
+
 
                     </form>
 
                 </div>
+
+
             </section>
 
         </div>

@@ -10,7 +10,7 @@ const CourseCard = ({id , img , heading , dets, fullDetails , price , discount }
             <div>
                 <img
                     src={img}
-                    alt=""
+                    alt="An course image"
                     className='rounded-xl w-full h-auto object-cover'
                 />
             </div>

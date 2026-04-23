@@ -10,8 +10,9 @@
 
 .plyr video {
     object-fit: cover;
-    /* 🔥 fills completely */
 }
+
+
 
 @font-face {
     font-family: 'poppins';
@@ -168,4 +169,14 @@ html.lenis, html.lenis body {
 
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
+}
+
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
 }

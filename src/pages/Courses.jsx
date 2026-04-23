@@ -27,7 +27,7 @@ const Courses = () => {
 
         <>
             {/* mentor section  */}
-            <div className=' my-6 px-2 py-8 border rounded-xl'>
+            <div className=' my-6 px-2 py-8 border border-gray-400 rounded-xl'>
 
                 <div className='flex gap-2 items-center justify-center'>
 
@@ -50,7 +50,7 @@ const Courses = () => {
             </div>
 
             {/* courses section  */}
-            <section className='border my-4 border-b-gray-500 p-4 md:p-6 rounded-xl bg-[#783fc2]'>
+            <section className=' my-4 border-b-gray-500 p-4 md:p-6 rounded-xl bg-[#783fc2]'>
 
                 <div className='grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 '>
 
@@ -71,7 +71,7 @@ const Courses = () => {
             </section>
 
             {/* community section  */}
-            <section className='border rounded px-2 py-4 text-center md:flex md:justify-evenly md:items-center gap-6'>
+            <section className=' rounded px-2 py-4 text-center md:flex md:justify-evenly md:items-center gap-6'>
 
                 <div>
 

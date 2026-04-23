@@ -135,7 +135,7 @@ const Home = () => {
             >
 
                 <div id='sharp-div'
-                    className='flex flex-col gap-6 items-center text-center border rounded-xl justify-evenly py-6 md:flex-row'
+                    className='flex flex-col gap-6 items-center text-center border border-gray-400 rounded-xl justify-evenly py-6 md:flex-row'
                 >
 
                     <div>
@@ -157,7 +157,7 @@ const Home = () => {
 
                 <div className='text-center my-4 gap-2 md:flex md:text-left'>
 
-                    <div className='border border-red-600 px-4 py-2 rounded-xl'>
+                    <div className='border border-gray-400 px-4 py-2 rounded-xl'>
                         <h2 className='text-3xl my-4 md:text-4xl text-[#6C1BD9] font-semibold'>Job ready skills that matter</h2>
                         <p className='my-4 text-gray-600'>Master development through real-world applications, not tutorials</p>
                         <Button className='px-4 py-2 mx-2 my-1 bg-[#00AB93] text-white rounded-xl' name='Full Stack Development' />
@@ -168,7 +168,7 @@ const Home = () => {
                         <Button className='px-4 py-2 mx-2 my-1 bg-[#00AB93] text-white rounded-xl' name='Production Ready' />
                     </div>
 
-                    <div className='border rounded-xl py-2 px-2 my-4 md:my-0 md:px-4 md:py-4'>
+                    <div className='border border-gray-400 rounded-xl py-2 px-2 my-4 md:my-0 md:px-4 md:py-4'>
                         <h2 className='text-3xl my-4 md:text-4xl text-[#6C1BD9] font-semibold'>Personally mentoring India's next 100x engineers</h2>
                         <p className='text-gray-600 md:mb-10'>Taking you from 1x to 100x through practical projects and real-world open source</p>
                     </div>
@@ -178,7 +178,7 @@ const Home = () => {
             </section>
 
             {/* swiper slider  */}
-            <section className='border my-4 py-4 rounded-xl'>
+            <section className=' my-4 py-4 rounded-xl'>
                 <h2 className=' capitalize my-4 text-4xl text-[#6C1BD9] font-semibold text-center mb-6 md:text-5xl'>why luna coding institute ? </h2>
 
                 <p className='text-gray-500 text-center my-4 text-base md:text-lg'>Our most comprehensive and impactful learning experiences</p>
@@ -236,7 +236,7 @@ const Home = () => {
             </section>
 
             {/* courses section  */}
-            <section className='border border-b-gray-500 p-4 md:p-6 rounded-xl bg-[#4F39F6]'>
+            <section className=' border-b-gray-500 p-4 md:p-6 rounded-xl bg-[#4F39F6]'>
 
 
                 <h2
@@ -263,7 +263,7 @@ const Home = () => {
             </section>
 
             {/* testimonials section   */}
-            <section className='border my-4 py-4 px-2 rounded-xl'>
+            <section className=' my-4 py-4 px-2 rounded-xl'>
 
                 <h2 className=' capitalize my-4 text-4xl text-[#6C1BD9] font-semibold text-center mb-6 md:text-5xl'>Testimonials </h2>
 
@@ -465,7 +465,7 @@ const Home = () => {
             </section>
 
             {/* faq section  */}
-            <section className='border my-4 py-4 px-2 rounded-xl'>
+            <section className=' my-4 py-4 px-2 rounded-xl'>
 
                 <h2 className=' capitalize my-1 text-4xl text-[#6C1BD9] font-semibold text-center mb-6 md:text-5xl'>FAQs</h2>
                 <div className='flex flex-col gap-4 md:w-1/2 md:justify-center md:mx-auto'>
@@ -510,7 +510,7 @@ const Home = () => {
             </section>
 
             {/* inquery section  */}
-            <section className='border my-4 py-4 px-2 rounded-xl'>
+            <section className=' my-4 py-4 px-2 rounded-xl'>
 
                 <div className='flex flex-col gap-4 md:flex-row md:justify-evenly md:items-center md:gap-4'>
 

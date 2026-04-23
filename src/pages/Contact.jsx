@@ -34,7 +34,6 @@ const Contact = () => {
         }
     })
 
-    // This checks if the user tried to submit, but there are errors in the form
     useEffect(() => {
         if (formik.submitCount > 0 && !formik.isValid) {
             toast.error("Please fill all required details correctly!");
@@ -126,7 +125,7 @@ const Contact = () => {
                     </div>
 
                     {/* right side - contact us image  */}
-                    <div className='my-6 border border-gray-400 rounded-lg md:w-1/2'>
+                    <div className='my-6  rounded-lg md:w-1/2'>
                         <img src={contactimg} alt="contact us image" />
                     </div>
 

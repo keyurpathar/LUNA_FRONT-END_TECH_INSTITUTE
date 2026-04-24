@@ -14,7 +14,6 @@ const Courses = () => {
                 const res = await axios.get("http://localhost:5000/course");
                 if (res.data.success) {
                     setDbCourses(res.data.data);
-                    console.log(dbCourses)
                 }
             } catch (err) {
                 console.error("Error fetching courses", err);

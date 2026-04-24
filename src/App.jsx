@@ -19,6 +19,8 @@ import ManageCourse from './pages/admin/ManageCourse'
 import AdminLayout from './components/admin/AdminLayout'
 import ManageContact from './pages/admin/ManageContact'
 import NotFound from './pages/NotFound'
+import PaymentSuccess from './pages/PaymentSuccess'
+import PaymentCancel from './pages/PaymentCancel'
 
 const App = () => {
 
@@ -44,6 +46,8 @@ const App = () => {
           <Route path='/contact' element={<Contact />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
+          <Route path='/success' element={<PaymentSuccess />} />
+          <Route path='/cancel' element={<PaymentCancel />} />
           <Route path='*' element={<NotFound />} />
 
           {/* admin routes  */}

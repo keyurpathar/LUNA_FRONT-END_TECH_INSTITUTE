@@ -40,6 +40,22 @@ const CourseDetail = () => {
         );
     }
 
+    const handlePay = async (e) => {
+        e.preventDefault();
+        try {
+            const { data } = await axios.post("http://localhost:5000/payment", {
+                name: course.name,
+                price: course.price
+            });
+
+            if (data.url) {
+                window.location.href = data.url;
+            }
+        } catch (error) {
+            console.log("Payment Error:", error);
+        }
+    };
+
     return (
         <div className="max-w-6xl mx-auto my-8 p-4 md:p-8 bg-white border-2 border-gray-200 rounded-2xl ">
             <Link to="/course" className="inline-flex items-center gap-2 text-[#4F39F6] hover:underline mb-6 font-semibold">
@@ -79,6 +95,7 @@ const CourseDetail = () => {
                         </div>
 
                         <Button
+                            onClick={handlePay}
                             name='Enroll Now'
                             className='w-full bg-[#4F39F6] text-white hover:bg-[#6C1BD9] active:scale-95 transition-all duration-200 rounded-lg py-3 text-lg md:text-xl font-bold shadow-md'
                         />
